@@ -147,6 +147,11 @@ input[type="checkbox"] {
     border-radius: 0.5rem;
     text-transform: uppercase;
   }
+
+  .form-group:has(#permission) {
+    grid-column: 1 / -1;
+  }
+  
 }
 
 .form-group {
