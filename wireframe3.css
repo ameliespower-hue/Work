@@ -1,0 +1,46 @@
+body {
+    font-family: Geologica, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.wireframe {
+    text-transform: uppercase; 
+    letter-spacing: 0.5rem; 
+}
+
+.intro {
+    background-color: #aaa;
+    height: 10rem;
+}
+
+.testimonials {
+    background-color: #eee;
+
+    & ul {
+        list-style: none;
+    }
+
+    & li {
+        padding-bottom: 1rem;
+
+        &:before {
+            content: "\""
+        }
+
+        &:after {
+            content: "\""
+        }
+    }
+}
+.centred {
+    text-align: center; 
+    font-size: 2rem;
+
+ 
+}
+.artists {
+    display: flex; 
+}
