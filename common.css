@@ -1,0 +1,258 @@
+:root {
+  --primary: #777;
+  --secondary: #aaa;
+  --light: #eee;
+  --bright: #fff;
+  --shimmer: #999;
+}
+
+body {
+  font-family: 'Geologica', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  grid-area: header;
+  background-color: var(--primary);
+  color: var(--bright);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+
+  @media (width > 800px) {
+    padding: 0.5rem 5rem;
+  }
+}
+
+main {
+  grid-area: main;
+  background-color: var(--bright);
+
+  &>* {
+    padding: 1rem 5rem;
+  }
+
+  & h1 {
+    /* text-align: center; */
+    color: var(--primary);
+    padding: 2rem 0 0 0;
+    margin: 0;
+  }
+
+  & h2 {
+    color: var(--secondary);
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 1.25rem 0 0 0;
+  }
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--primary);
+  color: var(--bright);
+  padding: 0.5rem 5rem;
+}
+
+section {
+  padding: 3rem 5rem;
+}
+
+/* UTILITY CLASSES */
+.centred {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.wireframe {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.25rem;
+  display: flex;
+  gap: 1rem;
+  color: var(--shimmer)
+}
+
+.wireframe-header {
+  width: 50%;
+  background-color: var(--secondary);
+  color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.navigation-bar {
+  text-transform: uppercase;
+
+  & nav {
+    position: fixed;
+    inset: 0 0 0 100%;
+    background-color: hsl(0 0% 0% / 0.2);
+    padding: 6rem 0;
+    transition: all .3s .3s cubic-bezier(.5, 1, .22, 1);
+    z-index: 100;
+
+    @media (width > 800px) {
+      z-index: 0;
+      display: block;
+      position: static;
+      inset: 0;
+      background-color: initial;
+      padding: 0;
+      transition: none;
+    }
+  }
+
+  & input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    margin: 0;
+    position: absolute;
+
+    &:checked {
+      &~nav {
+        inset: 0 0 0 50%;
+
+        @media (width > 800px) {
+          display: block;
+          position: initial;
+          inset: 0;
+          background-color: initial;
+          padding: 0;
+        }
+      }
+
+      &~label {
+        z-index: 9999;
+      }
+
+      @media (width <=800px) {
+        &~nav>.primary-navigation>li:nth-child(odd) {
+          background-color: hsl(0 0% 100% / 0.1);
+        }
+      }
+
+      &~label>*:first-child {
+        /* top: 50%; */
+        transform: translateY(300%) rotate(-45deg);
+      }
+
+      &~label>*:nth-child(2) {
+        opacity: 0;
+      }
+
+      &~label>*:nth-child(3) {
+        transform: translateY(-300%) rotate(45deg);
+      }
+    }
+  }
+
+  .primary-navigation {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & li {
+      padding: 1rem 2rem;
+
+      & a {
+        text-decoration: none;
+        color: black;
+      }
+
+      &:hover a,
+      &:focus-visible a {
+        color: white;
+      }
+    }
+
+    @media (width > 800px) {
+      flex-direction: row;
+      gap: 2rem;
+
+      & li {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  .navigation-bar nav {
+    backdrop-filter: blur(1rem);
+  }
+}
+
+.toggle-control {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  width: 1rem;
+  aspect-ratio: 1;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover>*,
+  &:focus-visible>* {
+    background: white;
+  }
+
+  @media (width > 800px) {
+    display: none;
+  }
+
+  &>* {
+    position: absolute;
+    display: block;
+    background-color: #000;
+    width: 100%;
+    height: 16%;
+    transition: all .4s cubic-bezier(.5, .1, 0, 1.2);
+  }
+
+  &>div:nth-child(1) {
+    transform-origin: top center;
+  }
+
+  &>div:nth-child(2) {
+    top: 46%;
+  }
+
+  &>div:nth-child(3) {
+    top: 92%;
+    transform-origin: bottom center;
+  }
+}
+
+.artwork {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--light);
+  object-fit: cover;
+  border: 1px solid var(--secondary);
+  display: flex;
+  align-items: center;
+
+  & img {
+    display: none;
+  }
+
+  & p {
+    position: absolute;
+    text-transform: uppercase;
+    color: var(--secondary);
+    letter-spacing: 0.4rem;
+    text-align: center;
+  }
+}
+
+/* END UTILITY CLASSES */

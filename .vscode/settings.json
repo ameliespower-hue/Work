@@ -1,0 +1,7 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "chat.sendElementsToChat.attachImages": false,
+  "chat.sendElementsToChat.attachCSS": false,
+  "chat.sendElementsToChat.enabled": false
+}

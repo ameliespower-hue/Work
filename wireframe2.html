@@ -1,64 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="wireframe2.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,0&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="wireframe2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,0&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
+  <body>
     <div class="grid-layout">
-        <header class="wireframe">
-            <div class="wireframe-header">header + logo</div>
-            <div class="wireframe-header">navigation bar</div>
-        </header>
-        <main>
-            <h1>Have a question before making a purchase?</h1>
-            <h2>If you have a question about the item before you make a purchase, please fill in your details below.</h2>
-            <section class="form">
-                <div class="container">
-                    <div class="preview">
-                        <div class="artist">
-                            <img src="" alt="" />
-                            <label></label>
-                            <div class="type">Art type - dimensions</div>
-                            <div class="name">Name</div>
-                            <div class="artist"><a href="#">Artist Name + Hyperlink</a></div>
-                            <div class="date">Date of creation</div>
-                            <div class="price">£199</div>
-                        </div>
-                    </div>
-                    <div class="contact">
-                        <div class="form-group">
-                            <label for="firstName">First name</label>
-                            <input type="text" id="firstName" />
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" id="email" />
-                        </div>
-                        <div class="form-group">
-                            <label for="query">Query</label>
-                            <textarea id="query" name="query" rows="5"></textarea>
-                        </div>
-                        <button>Submit</button>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="wireframe">footer</footer>
-        <div class="fake">blah</div>
+      <header>
+        <div>&nbsp;</div>
+        <div class="navigation-bar">
+          <input type="checkbox" id="toggle" aria-controls="primary-navigation" aria-hidden="true" />
+          <label class="toggle-control" for="toggle" aria-hidden="true">
+            <div></div>
+            <div></div>
+            <div></div>
+          </label>
+          <nav role="navigation">
+            <ul id="primary-navigation" class="primary-navigation">
+              <li><a href="wireframe3.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="wireframe1.html">Cart</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <section class="form">
+          <h1>Have a question before making a purchase?</h1>
+          <h2>If you have a question about the item before you make a purchase, please fill in your details below.</h2>
+          <div class="preview">
+            <div class="artist">
+              <div class="artwork">
+                <img src="" alt="preview of artwork" />
+                <p>Preview of artwork</p>
+              </div>
+              <div class="type">Art type - dimensions</div>
+              <div class="name">Name</div>
+              <div class="artist">Artist Name</div>
+              <div class="date">Date of creation</div>
+              <div class="price">Price</div>
+            </div>
+            <div class="contact">
+              <div class="form-group">
+                <label for="firstName">First name</label>
+                <input type="text" id="firstName" />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" />
+              </div>
+              <div class="form-group">
+                <label for="query">Query</label>
+                <textarea id="query" name="query" rows="5"></textarea>
+              </div>
+              <button type="submit">Send</button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="wireframe">footer</footer>
     </div>
-</body>
-
+  </body>
 </html>
