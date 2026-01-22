@@ -4,6 +4,9 @@
   --light: #eee;
   --bright: #fff;
   --shimmer: #999;
+
+  --vspace: 1rem;
+  --hspace: 5rem;
 }
 
 body {
@@ -12,16 +15,29 @@ body {
   padding: 0;
 }
 
+.grid-layout {
+  min-block-size: 100vb;
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
 header {
   grid-area: header;
   background-color: var(--primary);
   color: var(--bright);
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
+  padding: var(--vspace);
 
   @media (width > 800px) {
-    padding: 0.5rem 5rem;
+    padding: var(--vspace) var(--hspace);
   }
 }
 
@@ -30,7 +46,7 @@ main {
   background-color: var(--bright);
 
   &>* {
-    padding: 1rem 5rem;
+    padding: 1rem var(--hspace);
   }
 
   & h1 {
@@ -52,11 +68,15 @@ footer {
   grid-area: footer;
   background-color: var(--primary);
   color: var(--bright);
-  padding: 0.5rem 5rem;
+  padding: var(--vspace);
+
+  @media (width > 800px) {
+    padding: var(--vspace) var(--hspace);
+  }
 }
 
 section {
-  padding: 3rem 5rem;
+  padding: 3rem var(--hspace);
 }
 
 /* UTILITY CLASSES */
@@ -150,35 +170,37 @@ section {
     }
   }
 
-  .primary-navigation {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+}
 
-    & li {
-      padding: 1rem 2rem;
+.primary-navigation,
+.secondary-navigation {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-      & a {
-        text-decoration: none;
-        color: black;
-      }
+  & li {
+    padding: 1rem 2rem;
 
-      &:hover a,
-      &:focus-visible a {
-        color: white;
-      }
+    & a {
+      text-decoration: none;
+      color: black;
     }
 
-    @media (width > 800px) {
-      flex-direction: row;
-      gap: 2rem;
+    &:hover a,
+    &:focus-visible a {
+      color: white;
+    }
+  }
 
-      & li {
-        padding: 0;
-      }
+  @media (width > 800px) {
+    flex-direction: row;
+    gap: 2rem;
+
+    & li {
+      padding: 0;
     }
   }
 }

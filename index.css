@@ -1,0 +1,128 @@
+:root {
+  --primary: #022f40;
+  --secondary: #f7f4f3;
+  --light: #8d818c;
+  --bright: #4ea699;
+  --deep: #280004;
+}
+
+.primary-navigation,
+.secondary-navigation {
+  color: var(--light);
+  filter: grayscale();
+  overflow: visible;
+
+  & li a {
+    color: var(--light);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.intro {
+  background-image:
+    url('images/silas-small.png'),
+    linear-gradient(70deg, var(--secondary), var(--primary));
+  background-blend-mode: soft-light, normal;
+
+  & .title {
+    color: var(--secondary);
+    text-shadow:
+      -1px -1px 0 var(--deep),
+      1px -1px 0 var(--deep),
+      -1px 1px 0 var(--deep),
+      1px 1px 0 var(--deep),
+      0 0 1rem var(--light);
+
+    & span {
+      transition: color 0.3s ease, scale 0.3s ease;
+    }
+
+    & span:hover {
+      color: var(--bright);
+      scale: 1.2;
+    }
+  }
+
+  & .subtitle {
+    color: var(--deep);
+    text-shadow:
+      -1px -1px 0 var(--secondary),
+      1px -1px 0 var(--secondary),
+      -1px 1px 0 var(--secondary),
+      1px 1px 0 var(--secondary),
+      0 0 1rem var(--secondary);
+  }
+}
+
+.testimonials q:before,
+.testimonials q:after {
+  color: var(--deep);
+}
+
+.testimonials .person {
+  color: var(--bright);
+}
+
+.suggestions {
+  background-color: var(--secondary);
+}
+
+.cart {
+  position: relative;
+  margin-right: 2rem;
+}
+
+.cart:after {
+  position: absolute;
+  content: '2';
+  background-color: var(--deep);
+  color: var(--secondary);
+  border-radius: 100%;
+  width: 1.2em;
+  aspect-ratio: 1;
+  text-align: center;
+  border: 1px solid var(--secondary);
+  right: -1.5rem;
+  top: .5rem;
+  z-index: -10;
+}
+
+.suggestions {
+  background-color: #fff;
+}
+
+.suggestions .centred {
+  text-transform: uppercase;
+  color: var(--deep);
+  letter-spacing: .5rem;
+  ;
+}
+
+.artwork {
+  background-color: var(--secondary);
+  border: 1px solid var(--primary);
+  padding: 1rem;
+  border-radius: 0;
+
+  & img {
+    display: block;
+  }
+}
+
+.artists {
+  align-items: end;
+}
+
+.centred span:first-child {
+  color: var(--bright);
+  font-size: 5rem;
+}
+
+.suggestions .artists .artist .name {
+  color: var(--light);
+  font-size: 1rem;
+  letter-spacing: .25rem;
+}
